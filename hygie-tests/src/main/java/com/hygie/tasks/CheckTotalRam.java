@@ -8,6 +8,8 @@ public class CheckTotalRam implements TaskClass{
 	public void executer() {
 		// TODO Auto-generated method stub
 		
+		System.out.println("hello 2");
+		
 	}
 
 }

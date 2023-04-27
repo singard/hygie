@@ -8,6 +8,8 @@ public class CheckFreeSpaceDisc implements TaskClass {
 	public void executer() {
 		// TODO Auto-generated method stub
 		
+		System.out.println("hello");
+		
 	}
 
 }
