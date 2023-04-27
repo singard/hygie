@@ -5,9 +5,18 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>hygie</name>
   <packaging>pom</packaging>
+  
   <modules>
   	<module>hygie-core</module>
   	<module>hygie-installer</module>
       <module>hygie-test</module>
+      <module>hygie-tests</module>
   </modules>
+  
+  <properties>
+    <maven.compiler.source>12</maven.compiler.source>
+    <maven.compiler.target>12</maven.compiler.target>
+</properties>
+  
+  
 </project>
