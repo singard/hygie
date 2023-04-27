@@ -1,19 +1,19 @@
 package com.hygie.model;
 
-import com.hygie.tests.CheckFreeSpaceDisc;
-import com.hygie.tests.CheckTotalRam;
+import com.hygie.tasks.CheckFreeSpaceDisc;
+import com.hygie.tasks.CheckTotalRam;
 
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public enum TestType {
+public enum TaskType {
 	
 	CHECK_FREE_SPACE_DISC(CheckFreeSpaceDisc.class),
 	CHECK_TOTAL_RAM(CheckTotalRam.class); 
 	
-	private final Class<? extends TestClass> classe;
+	private final Class<? extends TaskClass> classe;
 
-    public Class<? extends TestClass> getClasse() {
+    public Class<? extends TaskClass> getClasse() {
         return classe;
     }
 

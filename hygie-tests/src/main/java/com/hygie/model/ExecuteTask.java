@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ExecuteTest {
+public class ExecuteTask {
 	
-	private TestType testType;
+	private TaskType testType;
 	private String description;
 	private String[] args;
 

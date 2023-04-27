@@ -1,6 +1,6 @@
 package com.hygie.model;
 
-public interface TestClass {
+public interface TaskClass {
 
 	void executer();
 }
