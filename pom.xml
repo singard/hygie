@@ -8,5 +8,6 @@
   <modules>
   	<module>hygie-core</module>
   	<module>hygie-installer</module>
+      <module>hygie-test</module>
   </modules>
 </project>
