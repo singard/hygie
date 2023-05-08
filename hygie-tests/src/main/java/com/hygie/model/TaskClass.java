@@ -1,9 +1,8 @@
 package com.hygie.model;
 
-import lombok.AllArgsConstructor;
-
 
 public interface TaskClass {
 
-	void executer();
+	ResultTask executer();
+	void verifyArgs();
 }

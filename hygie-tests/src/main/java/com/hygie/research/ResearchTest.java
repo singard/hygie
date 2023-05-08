@@ -4,12 +4,13 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 import com.hygie.model.ExecuteTask;
+import com.hygie.model.ResultTask;
 import com.hygie.model.TaskClass;
 import com.hygie.model.TaskType;
 
 public class ResearchTest {
 
-	public static void executerClasse(ExecuteTask executeTask) {
+	public static ResultTask executerClasse(ExecuteTask executeTask) {
 		try {
 		    TaskType taskType = executeTask.getTestType();
 
@@ -19,11 +20,15 @@ public class ResearchTest {
 		    String[] arguments = executeTask.getArgs();
 		    TaskClass instance = constructor.newInstance((Object) arguments);
 		    
-		    instance.executer();
+		    ResultTask resultTask = instance.executer();
+		    resultTask.setExecuteTask(executeTask);
+		    return  resultTask;
 		    
 		} catch (Exception e) {
 		    e.printStackTrace();
+		    return null;
 		}
+		
 
 
 
