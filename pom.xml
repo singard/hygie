@@ -24,6 +24,13 @@
 
 
 <dependencies>
+
+ 	<dependency>
+        <groupId>com.github.oshi</groupId>
+        <artifactId>oshi-core</artifactId>
+        <version>5.8.0</version>
+    </dependency>
+
     <!-- Autres dépendances -->
     <dependency>
         <groupId>org.projectlombok</groupId>
