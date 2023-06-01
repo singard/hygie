@@ -9,8 +9,7 @@
   <modules>
   	<module>hygie-core</module>
   	<module>hygie-installer</module>
-      <module>hygie-test</module>
-      <module>hygie-tests</module>
+      <module>hygie-task</module>
   </modules>
   
   <properties>
