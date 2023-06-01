@@ -10,6 +10,10 @@
   	<module>hygie-core</module>
   	<module>hygie-installer</module>
       <module>hygie-task</module>
+      <module>hygie-doc</module>
+      <module>hygie-json</module>
+      <module>hygie-bash</module>
+      <module>hygie-ui</module>
   </modules>
   
   <properties>
