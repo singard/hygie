@@ -7,8 +7,8 @@
   <packaging>pom</packaging>
   
   <modules>
-  	<module>hygie-core</module>
-  	<module>hygie-installer</module>
+  	  <module>hygie-core</module>
+  	  <module>hygie-installer</module>
       <module>hygie-task</module>
       <module>hygie-doc</module>
       <module>hygie-json</module>
