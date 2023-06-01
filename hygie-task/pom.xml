@@ -5,8 +5,8 @@
     <artifactId>hygie</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>hygie-tests</artifactId>
-  <name>hygie tests</name>
+  <artifactId>hygie-task</artifactId>
+  <name>hygie task</name>
   
 
    
