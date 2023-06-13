@@ -7,4 +7,11 @@
   </parent>
   <artifactId>hygie-core</artifactId>
   <name>hygie-core</name>
+    <dependencies>
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>jsonparse</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+    </dependencies>
 </project>
