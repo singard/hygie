@@ -7,4 +7,12 @@
   </parent>
   <artifactId>hygie-json</artifactId>
   <name>hygie-json</name>
+  <dependencies>
+    <dependency>
+      <groupId>com</groupId>
+      <artifactId>hygie-task</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 </project>
