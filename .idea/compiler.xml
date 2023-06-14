@@ -2,13 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hygie-core" />
         <module name="hygie-test" />
+        <module name="hygie-doc" />
         <module name="hygie-installer" />
+        <module name="hygie-bash" />
+        <module name="hygie-json" />
+        <module name="hygie-ui" />
+        <module name="hygie-task" />
       </profile>
     </annotationProcessing>
   </component>
