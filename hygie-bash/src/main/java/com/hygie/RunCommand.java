@@ -1,6 +1,7 @@
 package com.hygie;
 
 import java.io.File;
+import java.net.URL;
 import java.nio.file.Paths;
 
 import org.jline.utils.Log;
@@ -15,18 +16,38 @@ public class RunCommand {
 
     @ShellMethod("Run the specified file")
     public String run(@ShellOption(help = "File name") String fileName) {
-    	String jarPath = getJarPath();
-        String folderPath = Paths.get(jarPath).getParent().toString();
+    	
+//    	String jarPath = getJarPath();
+//        String folderPath = Paths.get(jarPath).getParent().toString();
+//        
+//        String filePath = Paths.get(folderPath, fileName).toString();
+//        Log.info("Running file: " + filePath);
+    	
+    	 // Obtenir le chemin complet du fichier JSON
+        ClassLoader classLoader = RunCommand.class.getClassLoader();
+        URL resource = classLoader.getResource("data/"+fileName+".json");
+        System.out.println(classLoader.getResource("data/"+fileName+".json").toString());
+        if (resource != null) {
+            String filePath = resource.getPath();
+            System.out.println("Chemin complet du fichier : " + filePath);
+            File file = new File(filePath);
+
+            // Utiliser le fichier dans subproject2
+            // Par exemple, utiliser MyClass de subproject1
+         
+            ReadFile.read(file);
+            // ...
+        } else {
+            System.out.println("Fichier introuvable !");
+        }
         
-        String filePath = Paths.get(folderPath, fileName).toString();
-        Log.info("Running file: " + filePath);
         // Implémentez ici la logique pour exécuter le fichier spécifié
 
-        ReadFile.read(new File("filePath"));
+       
         //lecture du fichier et transformation en ExecuteTask
         
         //génération du raport
-        return "Running file: " + filePath;
+        return "Running file: " ;
     }
 
     private String getJarPath() {
