@@ -8,6 +8,13 @@
   <artifactId>hygie-bash</artifactId>
   <name>hygie-bash</name>
   <dependencies>
+  
+		  <dependency>
+		  	<groupId>com</groupId>
+		  	<artifactId>hygie-json</artifactId>
+		  	<version>0.0.1-SNAPSHOT</version>
+		  </dependency>
+  
     <dependency>
       <groupId>org.webjars.npm</groupId>
       <artifactId>jsonparse</artifactId>

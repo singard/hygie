@@ -22,11 +22,24 @@
     
     <lombok>1.18.22</lombok>
     <commons-io>2.11.0</commons-io>
+    <spring>2.5.0</spring>
     
 </properties>
 
 
 <dependencies>
+
+
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+          <version>${spring}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.shell</groupId>
+        <artifactId>spring-shell-starter</artifactId>
+        <version>2.1.10</version>
+    </dependency>
 
  	<dependency>
         <groupId>com.github.oshi</groupId>
@@ -66,6 +79,8 @@
         <artifactId>jackson-databind</artifactId>
         <version>2.14.2</version>
     </dependency>
+
+    
 
 </dependencies>
 
