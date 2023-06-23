@@ -1,17 +1,143 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
+         <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com</groupId>
+    <groupId>com.hygie</groupId>
     <artifactId>hygie</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>hygie-installer</artifactId>
   <name>hygie-installer</name>
+  <packaging>jar</packaging>
+  
+   
+    <properties>
+        <javaPathLinux>java/bin/java</javaPathLinux>
+        <javaPathWindows>java\bin\java.exe</javaPathWindows>
+        
+        <maven.compiler.source>11</maven.compiler.source>
+   		<maven.compiler.target>11</maven.compiler.target>
+
+    </properties>
+
     <dependencies>
         <dependency>
-            <groupId>org.webjars.npm</groupId>
-            <artifactId>jsonparse</artifactId>
-            <version>1.3.1</version>
+            <groupId>com.hygie</groupId>
+            <artifactId>hygie-bash</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
+
+    <profiles>
+        <!-- installer in windows start -->
+        <profile>
+            <id>windows</id>
+
+            <!--<dependencies>
+                <dependency>
+                    <groupId>net.adoptium.eclipse-temurin</groupId>
+                    <artifactId>jdk</artifactId>
+                    <version>11.0.17+8</version>
+                    <classifier>windows-x64</classifier>
+                    <type>zip</type>
+                </dependency>
+            </dependencies>-->
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>windows</id>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <phase>package</phase>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/assembly-archive-windows.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+        <!-- installer in windows end -->
+
+        <!-- installer in linux start -->
+        <profile>
+            <id>linux</id>
+
+            <dependencies>
+                <dependency>
+                    <groupId>net.adoptopenjdk</groupId>
+                    <artifactId>jdk</artifactId>
+                    <version>11.0.8+10</version>
+                    <classifier>linux-x64</classifier>
+                    <type>tar.gz</type>
+
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>linux</id>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <phase>package</phase>
+                                <configuration>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/assembly-archive-linux.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+        <!-- installer in linux end -->
+
+        <profile>
+            <id>installer-nojava</id>
+            <properties>
+                <javaPath>java</javaPath>
+            </properties>
+            <build>
+                <plugins>
+                    <!-- http://maven.apache.org/plugins/maven-assembly-plugin/ -->
+                    <!-- assembly:assembly -->
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>installer</id>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <phase>package</phase>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/assembly-archive-windows.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

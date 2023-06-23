@@ -1,0 +1,39 @@
+---
+- hosts: all
+  name: "Test server UI intern"
+  vars:
+    debug: true
+
+  tasks: 
+  
+
+    - name: "Check if Os is Debian Version 9 or 10 or RedHat Version 7 or 8"
+      cmd: linux_validity
+      args: debian 9 10 redHat 7 8
+      
+    - name: "Hard disk space available >= 100 Go"
+      cmd: check_disk_space
+      args: 100
+
+
+      ####################################################################################
+      
+    - name: "RAM >= 16 Go"
+      cmd: check_memory_size
+      args: 16
+      
+      ####################################################################################
+
+    - name: check the number of processor cores > 4
+      cmd: check_processors
+      args: 4
+
+      ####################################################################################
+
+    - name: "Testing HTTPS availability on local port:443"
+      cmd: https_availability
+      args: 443
+      
+    - name: "Testing HTTPS accessibility on local port:443"
+      cmd: http_get 
+      args: https://localhost:443/ping true {{httpTimeoutInSeconds}}

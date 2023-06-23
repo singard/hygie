@@ -1,0 +1,26 @@
+---
+- hosts: all
+  name: "Test configurator intern"
+  vars:
+    debug: true
+
+  tasks: 
+
+    - name: Check if Windows version is between 7 and 10
+      cmd: windows_validity
+      args: 7 10
+      
+    - name: check Excel  or equivalent is installed
+      cmd: check_excel_install
+      
+      ####################################################################################
+  
+    - name: "Hard disk space available >= 10 Go"
+      cmd: check_disk_space
+      args: 10
+ 
+      ####################################################################################
+      
+    - name: "RAM >= 4 Go"
+      cmd: check_memory_size
+      args: 4

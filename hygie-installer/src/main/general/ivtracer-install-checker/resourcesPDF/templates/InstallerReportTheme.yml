@@ -1,0 +1,114 @@
+extends: default
+
+font:
+  catalog:
+    merge: false # (1)
+    LiberationSans:
+      normal: LiberationSans-Regular.ttf
+      bold: LiberationSans-Bold.ttf
+      italic: LiberationSans-Italic.ttf
+      bold_italic: LiberationSans-BoldItalic.ttf
+      
+base:
+  font-color: #000000
+  font-family: LiberationSans
+  font-style: normal  
+  line-height: 1.5
+  font-size: 8
+  margin-page-top: 10
+  
+page:
+  margin: [0.7in, 0.27in, 1in, 0.27in]
+
+role:
+  annotation:
+    font-color: #0000FF
+  heading-title:
+    font-color: #1E71B8
+    font-size: 10
+    align: left
+    font-style: normal
+  heading-subtitle:
+    font-color: #1E71B8
+    font-size: 8
+    align: left
+    font-style: normal
+  heading-table:
+    background-color: #E7EEF3
+  quality:
+    font-color: #1E71B8
+    font-size: 8
+    align: left
+    font-style: normal
+  point-virgule-necessaire:
+    font-color: #FFFFFF
+  error:
+    font-color: #FF0000 
+    font-style: bold
+    
+
+pass:
+  background-color: #E7EEF3
+  font-color: #1E71B8
+  font-size: 10
+  align: left
+  font-style: normal
+  vertical-align: center
+  border-radius: 0
+  border-width: 0
+    
+header:
+  running-content:
+    start-at: 2
+  border-style: solid
+  border-color: #1E71B8
+  border-width: 1
+  height: 0.60in
+  padding: [5, 0, 2.5, 0]
+  margin: [0, 0.27in, 10, 0.27in]
+  font-size: 14
+  vertical-align: bottom
+  sectlevels: 1
+  recto: &shared_header
+    columns: <12.5% =75% >12.5%
+    left:
+      content: image::../images/ivtracer-logo.png[width=85]
+    center:
+      content: 'Installation Prerequisite Checker Report  :  {component}'
+  verso: *shared_header
+  
+footer:
+  border-style: solid
+  border-color: #1E71B8
+  border-width: 1
+  height: 0.80in
+  font-size: 8
+  padding: [7.5, 0, 5, 0]
+  margin: [10, 0.27in, 0, 0.27in]
+  vertical-align: top
+  recto: &shared_footer
+    left:
+      content: image::../images/netceler-logo.png[width=85]
+    center:
+      content:  Generated on  {generationDate}
+    right:
+      content: ' Page {page-number}/{page-count}'
+  verso: *shared_footer
+  
+table:
+  border-color: #BDD8E6
+  border-style: solid
+  border-width: 1
+  grid-width: 1
+  font-size: 6
+  head:
+    background-color: #E7EEF3
+    font-color: #1E71B8
+    font-size: 8
+    font-style: normal
+    cell:
+      padding: 3
+  cell:
+    padding: 2
+    leading: 1 
+

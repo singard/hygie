@@ -9,7 +9,7 @@ import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
-import com.hygie.research.ReadFile;
+import com.hygie.hygiejson.filemanager.ReadFile;
 
 @ShellComponent
 public class RunCommand {

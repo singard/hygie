@@ -1,0 +1,52 @@
+<ldaptranslator interval.in.minutes="1" debug="true">
+<ldapgroup dn="CN=IVTracer-Admin,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="Role : admin" scope="system" media="FlyVision" />
+	<ivright role="Role : admin" scope="system" media="E-mail" />
+</ldapgroup>
+<ldapgroup dn="CN=IVTracer-Full,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="Admin full" scope="site" media="FlyVision" />
+	<ivright role="Admin full" scope="site" media="E-mail" />
+</ldapgroup>
+<ldapgroup dn="CN=IVTracer-maintenance,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="Maintenance" scope="site" media="FlyVision" />
+</ldapgroup>
+<ldapgroup dn="CN=IVTracer-asset,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="Equipement de production" scope="site" media="FlyVision" />
+</ldapgroup>
+<ldapgroup dn="CN=IVTracer-Operator,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="Exploitant/Production" scope="site" media="FlyVision" />
+	<ivright role="Exploitant/Production" scope="site" media="E-mail" />
+</ldapgroup>
+<ldapgroup dn="CN=IVTracer-prod,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="prod only" scope="site" media="FlyVision" />
+</ldapgroup>
+<ldapgroup dn="CN=IVTracer-qualif,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="qaa only" scope="site" media="FlyVision" />
+	<ivright role="Exploitant/Production" scope="site" media="FlyVision" />
+	<ivright role="Exploitant/Production" scope="site" media="E-mail" />
+</ldapgroup>
+<ldapgroup dn="CN=intravision,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="Visualisation" scope="site" media="FlyVision" />
+<!--	<ivright role="Visualisation état station" scope="site" media="FlyVision" />-->
+</ldapgroup>
+<ldapgroup dn="CN=IVTracer-station,CN=Users,DC=ivtracer,DC=netceler">
+	<ivright role="Visualisation état station" scope="site" media="FlyVision" />
+</ldapgroup>
+<!-- LDAP SECONDAIRE : ivtracer-ui-aq domain aq -->
+<ldapgroup dn="cn=admin,ou=ivtracer,ou=groups,dc=ivtracer,dc=aq">
+	<ivright role="Role : admin" scope="system" media="FlyVision" />
+	<ivright role="Role : admin" scope="system" media="E-mail" />
+	<ivright role="Admin full" scope="site" media="FlyVision" />
+	<ivright role="Admin full" scope="site" media="E-mail" />
+</ldapgroup>
+<ldapgroup dn="cn=group1,ou=ivtracer,ou=groups,dc=ivtracer,dc=aq">
+	<ivright role="Maintenance" scope="site" media="FlyVision" />
+</ldapgroup>
+<ldapgroup dn="cn=group2,ou=ivtracer,ou=groups,dc=ivtracer,dc=aq">
+	<ivright role="Maintenance" scope="site" media="FlyVision" />
+</ldapgroup>
+<ldapgroup dn="cn=group3,ou=ivtracer,ou=groups,dc=ivtracer,dc=aq">
+	<ivright role="Exploitant/Production" scope="site" media="FlyVision" />
+	<ivright role="Exploitant/Production" scope="site" media="E-mail" />
+</ldapgroup>
+</ldaptranslator>
