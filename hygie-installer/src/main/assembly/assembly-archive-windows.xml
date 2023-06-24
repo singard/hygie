@@ -13,7 +13,7 @@
 	<componentDescriptors>
 		<componentDescriptor>src/main/assembly/template-windows.xml</componentDescriptor>
 		<componentDescriptor>src/main/assembly/template-base.xml</componentDescriptor>
-		<componentDescriptor>src/main/assembly/template-java-windows.xml</componentDescriptor>
+		<!-- <componentDescriptor>src/main/assembly/template-java-windows.xml</componentDescriptor> -->
 	</componentDescriptors>
 
 </assembly>

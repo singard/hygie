@@ -36,15 +36,15 @@
         <profile>
             <id>windows</id>
 
-            <!--<dependencies>
-                <dependency>
+            <dependencies>
+               <!--<dependency>
                     <groupId>net.adoptium.eclipse-temurin</groupId>
                     <artifactId>jdk</artifactId>
                     <version>11.0.17+8</version>
                     <classifier>windows-x64</classifier>
                     <type>zip</type>
-                </dependency>
-            </dependencies>-->
+                </dependency>-->
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>

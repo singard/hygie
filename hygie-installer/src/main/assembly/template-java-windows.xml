@@ -5,7 +5,7 @@
 
     <dependencySets>
         <dependencySet>
-            <outputDirectory>ivtracer-install-checker</outputDirectory>
+            <outputDirectory>hygie</outputDirectory>
             
             <unpack>true</unpack>
             <scope>runtime</scope>

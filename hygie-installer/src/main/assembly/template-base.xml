@@ -6,9 +6,9 @@
     <dependencySets>
         <dependencySet>
             <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
-            <outputDirectory>ivtracer-install-checker</outputDirectory>
+            <outputDirectory>hygie</outputDirectory>
             <includes>
-                <include>com.netceler.ivtracer.tools:ivtracer-install-checker-core:*</include>
+                <include>com.hygie:hygie-*:*</include>
             </includes>
         </dependencySet>
     </dependencySets>
