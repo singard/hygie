@@ -1,0 +1,119 @@
+---
+- hosts: all
+  name: "Test server UI intern"
+  vars:
+    debug: true
+
+  tasks: 
+  
+    - name: "Check if Windows server version is 2022"
+      cmd: windows_validity
+      args: 2022 
+      
+    - name: "UI Intern 200 Points"
+      cmd: include_tasks
+      args: "{{playbookFolder}}\\playbookUIIntern200Points.yaml"
+      when : measurementPoints === 200 
+      
+    - name: "UI Intern 1000 Points"
+      cmd: include_tasks
+      args: "{{playbookFolder}}\\playbookUIIntern1000Points.yaml"
+      when : measurementPoints === 1000
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:4646"
+      cmd: http_availability
+      args: 4646
+      
+    - name: "Testing HTTP accessibility on local port:4646"
+      cmd: http_get 
+      args: http://localhost:4646/ping false {{httpTimeoutInSeconds}}
+      
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:8080"
+      cmd: http_availability
+      args: 8080
+      
+    - name: "Testing HTTP accessibility on local port:8080"
+      cmd: http_get 
+      args: http://localhost:8080/ping false {{httpTimeoutInSeconds}}
+      
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:8083"
+      cmd: http_availability
+      args: 8083
+      
+    - name: "Testing HTTP accessibility on local port:8083"
+      cmd: http_get 
+      args: http://localhost:8083/ping false {{httpTimeoutInSeconds}}
+      
+      ####################################################################################
+    - name: "Testing HTTP availability on local port:8086"
+      cmd: http_availability
+      args: 8086
+      
+    - name: "Testing HTTP accessibility on local port:8086"
+      cmd: http_get 
+      args: http://localhost:8086/ping false {{httpTimeoutInSeconds}}
+
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:8087"
+      cmd: http_availability
+      args: 8087
+      
+    - name: "Testing HTTP accessibility on local port:8087"
+      cmd: http_get 
+      args: http://localhost:8087/ping false {{httpTimeoutInSeconds}}
+
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:8088"
+      cmd: http_availability
+      args: 8088
+      
+    - name: "Testing HTTP accessibility on local port:8088"
+      cmd: http_get 
+      args: http://localhost:8088/ping false {{httpTimeoutInSeconds}}
+
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:8089"
+      cmd: http_availability
+      args: 8089
+      
+    - name: "Testing HTTP accessibility on local port:8089"
+      cmd: http_get 
+      args: http://localhost:8089/ping false {{httpTimeoutInSeconds}}
+
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:8090"
+      cmd: http_availability
+      args: 8090
+      
+    - name: "Testing HTTP accessibility on local port:8090"
+      cmd: http_get 
+      args: http://localhost:8090/ping false {{httpTimeoutInSeconds}}
+
+      ####################################################################################
+
+    - name: "Testing HTTP availability on local port:8092"
+      cmd: http_availability
+      args: 8092
+      
+    - name: "Testing HTTP accessibility on local port:8092"
+      cmd: http_get 
+      args: http://localhost:8092/ping false {{httpTimeoutInSeconds}}
+
+      ####################################################################################
+      
+    - name: "Testing HTTPS availability on local port:443"
+      cmd: https_availability
+      args: 443
+      
+    - name: "Testing HTTPS accessibility on local port:443"
+      cmd: http_get 
+      args: https://localhost:443/ping true {{httpTimeoutInSeconds}}
