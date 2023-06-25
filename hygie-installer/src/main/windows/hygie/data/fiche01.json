@@ -1,0 +1,12 @@
+[
+  {
+	"testType": "CHECK_FREE_SPACE_DISC",
+	"description": "test espace disque + de 50 go",
+	"args": ["50"]
+  },
+  {
+	"testType": "CHECK_TOTAL_RAM",
+	"description": "test ram + de 5 go",
+	"args": ["5"]
+  }
+]
