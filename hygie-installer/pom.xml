@@ -36,15 +36,6 @@
         <profile>
             <id>windows</id>
 
-            <dependencies>
-               <!--<dependency>
-                    <groupId>net.adoptium.eclipse-temurin</groupId>
-                    <artifactId>jdk</artifactId>
-                    <version>11.0.17+8</version>
-                    <classifier>windows-x64</classifier>
-                    <type>zip</type>
-                </dependency>-->
-            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -73,17 +64,6 @@
         <!-- installer in linux start -->
         <profile>
             <id>linux</id>
-
-            <dependencies>
-                <dependency>
-                    <groupId>net.adoptopenjdk</groupId>
-                    <artifactId>jdk</artifactId>
-                    <version>11.0.8+10</version>
-                    <classifier>linux-x64</classifier>
-                    <type>tar.gz</type>
-
-                </dependency>
-            </dependencies>
             <build>
                 <plugins>
                     <plugin>
