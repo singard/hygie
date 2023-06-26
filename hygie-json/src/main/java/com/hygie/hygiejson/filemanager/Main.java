@@ -1,12 +1,14 @@
-import com.hygie.model.ExecuteTask;
-import com.hygie.model.TaskType;
+package com.hygie.hygiejson.filemanager;
+
+import static com.hygie.hygiejson.filemanager.ReadFile.createJsonFile;
+import static com.hygie.hygiejson.filemanager.ReadFile.read;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.hygie.research.ReadFile.createJsonFile;
-import static com.hygie.research.ReadFile.read;
+import com.hygie.hygietask.model.ExecuteTask;
+import com.hygie.hygietask.model.TaskType;
 
 public class Main {
     public static void main(String[] args) {

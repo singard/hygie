@@ -1,12 +1,12 @@
-package com.hygie.research;
+package com.hygie.hygietask.research;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import com.hygie.model.ExecuteTask;
-import com.hygie.model.ResultTask;
-import com.hygie.model.TaskClass;
-import com.hygie.model.TaskType;
+import com.hygie.hygietask.model.ExecuteTask;
+import com.hygie.hygietask.model.ResultTask;
+import com.hygie.hygietask.model.TaskClass;
+import com.hygie.hygietask.model.TaskType;
 
 public class ResearchTest {
 

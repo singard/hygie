@@ -1,9 +1,9 @@
-package com.hygie;
+package com.hygie.hygietask;
 
-import com.hygie.model.ExecuteTask;
-import com.hygie.model.ResultTask;
-import com.hygie.model.TaskType;
-import com.hygie.research.ResearchTest;
+import com.hygie.hygietask.model.ExecuteTask;
+import com.hygie.hygietask.model.ResultTask;
+import com.hygie.hygietask.model.TaskType;
+import com.hygie.hygietask.research.ResearchTest;
 
 import lombok.extern.slf4j.Slf4j;
 

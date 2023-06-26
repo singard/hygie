@@ -1,17 +1,15 @@
-package com.hygie.research;
+package com.hygie.hygiejson.filemanager;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.hygie.hygietask.model.ExecuteTask;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-import com.hygie.model.ExecuteTask;
-import com.hygie.model.ResultTask;
-import com.hygie.model.TaskType;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

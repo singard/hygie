@@ -1,24 +1,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com</groupId>
+  <groupId>com.hygie</groupId>
   <artifactId>hygie</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>hygie</name>
   <packaging>pom</packaging>
   
   <modules>
-  	  <module>hygie-core</module>
-  	  <module>hygie-installer</module>
+  	  <!--<module>hygie-core</module> Dépendances -->
+  	  <!--<module>hygie-installer</module> Dépendances -->
       <module>hygie-task</module>
-      <module>hygie-doc</module>
+      <!--<module>hygie-doc</module> Dépendances -->
       <module>hygie-json</module>
       <module>hygie-bash</module>
-      <module>hygie-ui</module>
+      <!-- <module>hygie-ui</module>Dépendances -->
   </modules>
   
   <properties>
-    <maven.compiler.source>12</maven.compiler.source>
-    <maven.compiler.target>12</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
     
     <lombok>1.18.22</lombok>
     <commons-io>2.11.0</commons-io>

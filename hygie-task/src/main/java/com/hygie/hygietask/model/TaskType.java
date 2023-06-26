@@ -1,7 +1,7 @@
-package com.hygie.model;
+package com.hygie.hygietask.model;
 
-import com.hygie.tasks.CheckFreeSpaceDisc;
-import com.hygie.tasks.CheckTotalRam;
+import com.hygie.hygietask.tasks.CheckFreeSpaceDisc;
+import com.hygie.hygietask.tasks.CheckTotalRam;
 
 import lombok.AllArgsConstructor;
 

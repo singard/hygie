@@ -1,4 +1,4 @@
-package com.hygie.tasks;
+package com.hygie.hygietask.tasks;
 
 import java.io.IOException;
 import java.nio.file.FileStore;
@@ -7,8 +7,8 @@ import java.nio.file.Path;
 
 import org.apache.commons.io.FileUtils;
 
-import com.hygie.model.ResultTask;
-import com.hygie.model.TaskClass;
+import com.hygie.hygietask.model.ResultTask;
+import com.hygie.hygietask.model.TaskClass;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

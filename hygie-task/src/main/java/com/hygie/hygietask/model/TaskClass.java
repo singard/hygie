@@ -1,4 +1,4 @@
-package com.hygie.model;
+package com.hygie.hygietask.model;
 
 
 public interface TaskClass {
