@@ -1,8 +1,0 @@
-com\hygie\hygietask\research\ResearchTest.class
-com\hygie\hygietask\tasks\CheckFreeSpaceDisc.class
-com\hygie\hygietask\model\TaskClass.class
-com\hygie\hygietask\tasks\CheckTotalRam.class
-com\hygie\hygietask\model\ExecuteTask.class
-com\hygie\hygietask\model\TaskType.class
-com\hygie\hygietask\Main.class
-com\hygie\hygietask\model\ResultTask.class
