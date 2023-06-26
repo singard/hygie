@@ -13,7 +13,6 @@
 
 	<componentDescriptors>
 		<componentDescriptor>src/main/assembly/template-base.xml</componentDescriptor>
-		<componentDescriptor>src/main/assembly/template-java-linux.xml</componentDescriptor>
 		<componentDescriptor>src/main/assembly/template-linux.xml</componentDescriptor>
 	</componentDescriptors>
 
