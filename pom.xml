@@ -8,11 +8,12 @@
   
   <modules>
   	  <!--<module>hygie-core</module> Dépendances -->
-  	  <!--<module>hygie-installer</module> Dépendances -->
+  	  
       <module>hygie-task</module>
       <!--<module>hygie-doc</module> Dépendances -->
       <module>hygie-json</module>
       <module>hygie-bash</module>
+      <module>hygie-installer</module>
       <!-- <module>hygie-ui</module>Dépendances -->
   </modules>
   
