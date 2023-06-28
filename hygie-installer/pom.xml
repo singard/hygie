@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.hygie</groupId>
     <artifactId>hygie</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
   <artifactId>hygie-installer</artifactId>
   <name>hygie-installer</name>

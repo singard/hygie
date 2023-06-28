@@ -2,21 +2,26 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.hygie</groupId>
   <artifactId>hygie</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>${revision}</version>
   <name>hygie</name>
   <packaging>pom</packaging>
   
   <modules>
   	  <!--<module>hygie-core</module> Dépendances -->
-  	  <!--<module>hygie-installer</module> Dépendances -->
+  	  
       <module>hygie-task</module>
       <!--<module>hygie-doc</module> Dépendances -->
       <module>hygie-json</module>
       <module>hygie-bash</module>
+      <module>hygie-installer</module>
       <!-- <module>hygie-ui</module>Dépendances -->
   </modules>
   
   <properties>
+  
+  
+    <revision>0.0.1-SNAPSHOT</revision>
+ 
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     
