@@ -48,3 +48,4 @@
 # Fichiers spécifiques à Visual Studio Code
 .vscode/
 
+/pom.xml.versionsBackup
