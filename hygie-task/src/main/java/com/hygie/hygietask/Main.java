@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 public class Main { 
 
 	public static void main(String[] args) throws IllegalAccessException, InstantiationException {
+		System.setProperty("crypto.policy", "unlimited");
+
 		
 		ExecuteTask executeTask = new ExecuteTask(TaskType.CHECK_FREE_SPACE_DISC,"free space up to 50 Go", new String[] {"50"} );
 		ResultTask resultTask = ResearchTest.executerClasse(executeTask);
@@ -31,6 +33,10 @@ public class Main {
 		ExecuteTask executeTaskHttp2000 = new ExecuteTask(TaskType.CREATE_HTTP_SERVER,"ckeck if the port 2000 is free", new String[] {"2000"} );
 		ResultTask resultTaskHttp2000 = ResearchTest.executerClasse(executeTaskHttp2000);
 		log.info(resultTaskHttp2000.toString());
+		
+		ExecuteTask executeTaskHttps443  = new ExecuteTask(TaskType.CREATE_HTTPS_SERVER,"ckeck if the port 2020 is free to https server", new String[] {"2020"} );
+		ResultTask resultTaskHttps443  = ResearchTest.executerClasse(executeTaskHttps443 );
+		log.info(resultTaskHttps443 .toString());
 		
 	}
 	
