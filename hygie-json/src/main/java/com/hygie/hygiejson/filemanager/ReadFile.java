@@ -4,27 +4,37 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.hygie.hygietask.model.ExecuteTask;
+import com.hygie.hygietask.model.ResultTask;
+import com.hygie.hygietask.research.ResearchTest;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ReadFile {
-	 public static void read(File file) {
+	 public static List<ResultTask> read(File file) {
 	        ObjectMapper objectMapper = new ObjectMapper();
+	        List<ResultTask> resultTasks = new ArrayList<ResultTask>();
 	        try {
 	            List<ExecuteTask> executeTasks = objectMapper.readValue(file, new TypeReference<List<ExecuteTask>>() {});
-	            // Faites ce que vous voulez avec la liste d'objets ExecuteTask
+
 	            for (ExecuteTask task : executeTasks) {
+	            
 	                System.out.println(task);
+	            	ResultTask resultTask = ResearchTest.executerClasse(task);
+	        		log.info(resultTask.toString());
+	        		resultTasks.add(resultTask);
+	        		
 	            }
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
+			return resultTasks;
 	    }
 
     public static void createJsonFile(String fileName, List<ExecuteTask> taskList) {
