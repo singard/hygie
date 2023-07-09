@@ -1,5 +1,9 @@
 [
-
+  {
+	"testType": "CREATE_TCP_SERVER",
+	"description": "tcp server in port 1234",
+	"args": ["1234"]
+  },
   {
 	"testType": "CREATE_HTTPS_SERVER",
 	"description": "ckeck if port https 2020 is free",
