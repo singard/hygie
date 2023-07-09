@@ -12,6 +12,14 @@ public class Main {
 
 	public static void main(String[] args) throws IllegalAccessException, InstantiationException {
 		System.setProperty("crypto.policy", "unlimited");
+		
+		ExecuteTask executeTaskTcp = new ExecuteTask(TaskType.CREATE_TCP_SERVER,"tcp server in port 1234", new String[] {"1234"} );
+		ResultTask resultTaskTcp = ResearchTest.executerClasse(executeTaskTcp);
+		log.info(resultTaskTcp.toString());
+		
+		ExecuteTask executeTaskTcp2 = new ExecuteTask(TaskType.CREATE_TCP_SERVER,"tcp server in port 1234", new String[] {"1234"} );
+		ResultTask resultTaskTcp2 = ResearchTest.executerClasse(executeTaskTcp2);
+		log.info(resultTaskTcp2.toString());
 
 		
 		ExecuteTask executeTask = new ExecuteTask(TaskType.CHECK_FREE_SPACE_DISC,"free space up to 50 Go", new String[] {"50"} );
