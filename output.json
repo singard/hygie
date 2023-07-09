@@ -1,19 +1,9 @@
-[
-  {
-    "testType": "CHECK_FREE_SPACE_DISC",
-    "description": "Description 1",
-    "args": [
-      "arg1",
-      "arg2"
-    ]
-  },
-  {
-    "testType": "CHECK_TOTAL_RAM",
-    "description": "Description 2",
-    "args": [
-      "arg3",
-      "arg4",
-      "arg5"
-    ]
-  }
-]
+[ {
+  "testType" : "CHECK_FREE_SPACE_DISC",
+  "description" : "Description 1",
+  "args" : [ "arg1", "arg2" ]
+}, {
+  "testType" : "CHECK_TOTAL_RAM",
+  "description" : "Description 2",
+  "args" : [ "arg3", "arg4", "arg5" ]
+} ]
