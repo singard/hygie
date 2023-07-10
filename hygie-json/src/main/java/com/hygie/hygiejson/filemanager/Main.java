@@ -4,12 +4,11 @@ import com.hygie.export.PdfCreator;
 import com.hygie.hygietask.model.ExecuteTask;
 import com.hygie.hygietask.model.ResultTask;
 import com.hygie.hygietask.model.TaskType;
-
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-
 import static com.hygie.hygiejson.filemanager.ReadFile.createJsonFile;
 import static com.hygie.hygiejson.filemanager.ReadFile.read;
 
@@ -32,6 +31,7 @@ public class Main {
             System.out.println(task);
 
         }
+
         String title = "Résultats des tests";
         String filePath = "result_tasks.pdf";
 
