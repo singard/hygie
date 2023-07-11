@@ -17,8 +17,6 @@ public class Main {
     	String DEFAULT_PLAYBOOK_PATH = System.getProperty("user.dir");
 
 		DEFAULT_PLAYBOOK_PATH = DEFAULT_PLAYBOOK_PATH.concat(File.separator)
-				.concat("hygie-json")
-				.concat(File.separator)
                 .concat("data")
                 .concat(File.separator)
 				.concat("fiche01").concat(".json");
