@@ -39,7 +39,7 @@ public class CreateHTTPServer implements TaskClass {
             log.error("Le thread principal a été interrompu : {}", e.getMessage());
         }
 
-        resultTask.setResult("Serveur http démarré sur le port : " + port);
+        
 
         return resultTask;
     }

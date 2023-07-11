@@ -31,7 +31,7 @@ public class CreateTCPServer implements TaskClass {
             resultTask.setSuccessfulTest(true);
             resultTask.setResult("The server is listening on the port "+ port);
             // thread pour la continuation du serveur tcp sans bloquer le programme principale
-            // thread crée à la volé avec un labda
+            // thread crée par une labda
             Thread serverThread = new Thread(() -> {
                 // Boucle infinie pour accepter les connexions des clients
                 while (true) {
@@ -47,7 +47,7 @@ public class CreateTCPServer implements TaskClass {
             
         } catch (IOException e) {
             log.error("Error in create server in port {} ", port,e);
-            resultTask.setSuccessfulTest(true);
+            resultTask.setSuccessfulTest(false);
             resultTask.setResult("Error in create server in port "+port+" "+e);
     
         }
