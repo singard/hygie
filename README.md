@@ -9,9 +9,17 @@ git clone https://github.com/singard/hygie.git
 
 # création d'une nouvelle version
 
-mvn clean install -am -Pwindows
-
+A faire à la racine du projet
+```
 mvn versions:set -DnewVersion=2.50.1-SNAPSHOT (pour changer de version)
+```
+# création du livrable
+
+A faire à la racine du projet
+```
+mvn clean install -am -Pwindows
+```
+
 
 # test
 
