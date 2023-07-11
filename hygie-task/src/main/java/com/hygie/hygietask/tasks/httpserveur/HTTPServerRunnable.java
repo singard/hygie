@@ -29,10 +29,12 @@ public class HTTPServerRunnable implements Runnable {
             server.setExecutor(null);
             server.start();
             System.out.println("Serveur http démarré sur le port : " + port);
+            resultTask.setResult("Serveur http démarré sur le port : " + port);
             resultTask.setSuccessfulTest(true);
         } catch (IOException e) {
             resultTask.setSuccessfulTest(false);
-            System.err.println("Erreur lors du démarrage du serveur : " + e);
+            resultTask.setResult("Error starting http server on port : " + e.toString());
+            System.err.println("Error starting http server on port : " + e);
         } finally {
             latch.countDown(); // Permet au thread principal de reprendre l'exécution
         }

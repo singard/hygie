@@ -1,0 +1,57 @@
+[
+  {
+	"testType": "CREATE_TCP_SERVER",
+	"description": "tcp server in port 1235",
+	"args": ["1235"]
+  },
+  {
+	"testType": "CREATE_TCP_SERVER",
+	"description": "tcp server in port 1235 - echec",
+	"args": ["1235"]
+  },
+  {
+	"testType": "CREATE_HTTPS_SERVER",
+	"description": "ckeck if port https 2020 is free",
+	"args": ["2020"]
+  },
+   {
+	"testType": "CREATE_HTTPS_SERVER",
+	"description": "ckeck if port https 2020 is free - echec",
+	"args": ["2020"]
+  },
+  {
+	"testType": "CREATE_HTTP_SERVER",
+	"description": "ckeck if port http 2000 is free",
+	"args": ["2000"]
+  },
+  {
+	"testType": "CREATE_HTTP_SERVER",
+	"description": "ckeck if port http 2000 is free - echec",
+	"args": ["2000"]
+  },
+  {
+	"testType": "CREATE_HTTP_SERVER",
+	"description": "ckeck if port http 2020 is free - echec",
+	"args": ["2020"]
+  },
+  {
+	"testType": "CHECK_FREE_SPACE_DISC",
+	"description": "test espace disque + de 50 go",
+	"args": ["50"]
+  },
+  {
+	"testType": "CHECK_FREE_SPACE_DISC",
+	"description": "test espace disque + de 5000 go",
+	"args": ["5000"]
+  },
+  {
+	"testType": "CHECK_TOTAL_RAM",
+	"description": "test ram + de 5 go",
+	"args": ["5"]
+  },
+  {
+	"testType": "CHECK_TOTAL_RAM",
+	"description": "test ram + de 50 go",
+	"args": ["50"]
+  }
+]
