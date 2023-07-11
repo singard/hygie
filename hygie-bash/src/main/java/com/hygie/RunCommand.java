@@ -54,15 +54,15 @@ public class RunCommand {
 			//génération du raport
 			Date currentDate = new Date();
 			SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
-	        String formattedDateTime = dateTimeFormat.format(currentDate);
-	        
+			String formattedDateTime = dateTimeFormat.format(currentDate);
+
 			String title = fileNameJson+" report";
 			String folder = "report";
 			String fileNamePdf = folder+File.separator+fileNameJson+"_result_"+formattedDateTime+".pdf";
 
 			PdfCreator pdfCreator = new PdfCreator(title, fileNamePdf);
 			pdfCreator.createPdf(resultTasks);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
