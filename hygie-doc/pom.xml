@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.hygie</groupId>
     <artifactId>hygie</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
   </parent>
   <artifactId>hygie-doc</artifactId>
   <name>hygie-doc</name>
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.hygie</groupId>
             <artifactId>hygie-task</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
 
