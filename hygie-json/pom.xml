@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.hygie</groupId>
     <artifactId>hygie</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
   </parent>
   <artifactId>hygie-json</artifactId>
   <name>hygie-json</name>
@@ -19,7 +19,7 @@
     <dependency>
       <groupId>com.hygie</groupId>
       <artifactId>hygie-task</artifactId>
-      <version>1.0</version>
+      <version>1.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
       <dependency>
@@ -30,7 +30,7 @@
       <dependency>
           <groupId>com.hygie</groupId>
           <artifactId>hygie-doc</artifactId>
-          <version>1.0</version>
+          <version>1.1-SNAPSHOT</version>
           <scope>compile</scope>
       </dependency>
   </dependencies>
