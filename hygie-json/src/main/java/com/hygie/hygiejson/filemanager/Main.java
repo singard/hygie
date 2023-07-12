@@ -5,7 +5,6 @@ import com.hygie.hygietask.model.ExecuteTask;
 import com.hygie.hygietask.model.ResultTask;
 import com.hygie.hygietask.model.TaskType;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;

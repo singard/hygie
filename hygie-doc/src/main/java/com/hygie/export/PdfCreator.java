@@ -115,7 +115,7 @@ public class PdfCreator {
                         String[] words = parts[1].split(" ");
 
                         float startX = margin + labelWidth + 5; // Position horizontale initiale pour la valeur
-                        float startY = yPosition - labelHeight; // Position verticale initiale pour la valeur
+                        // Position verticale initiale pour la valeur
                         float currentPosition = startX;
 
                         for (String word : words) {
