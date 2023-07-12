@@ -5,7 +5,6 @@ import com.hygie.hygietask.model.ExecuteTask;
 import com.hygie.hygietask.model.ResultTask;
 import com.hygie.hygietask.model.TaskType;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +16,8 @@ public class Main {
     	String DEFAULT_PLAYBOOK_PATH = System.getProperty("user.dir");
 
 		DEFAULT_PLAYBOOK_PATH = DEFAULT_PLAYBOOK_PATH.concat(File.separator)
+                .concat("hygie-json")
+                .concat(File.separator)
                 .concat("data")
                 .concat(File.separator)
 				.concat("fiche01").concat(".json");

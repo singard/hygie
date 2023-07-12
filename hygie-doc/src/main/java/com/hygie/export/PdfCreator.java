@@ -75,10 +75,9 @@ public class PdfCreator {
 
             yPosition -= 3 * leading; // Décale la position verticale pour le contenu suivant
 
+            contentStream.setFont(font, fontSize); // Utiliser la police normale pour le texte principal
 
             for (ResultTask task : tasks) {
-                contentStream.setFont(font, fontSize); // Utiliser la police normale pour le texte principal
-
                 String testType = task.getExecuteTask().getTestType().toString();
                 String description = task.getExecuteTask().getDescription();
                 boolean successfulTest = task.isSuccessfulTest();
@@ -96,19 +95,53 @@ public class PdfCreator {
 
                 contentStream.beginText(); // Début du flux de texte pour chaque tâche
                 contentStream.setFont(font, fontSize); // Utiliser la police normale pour le texte principal
-
                 contentStream.newLineAtOffset(margin, yPosition); // Position initiale du texte
+
+                boolean isLabelDisplayed = false; // Indicateur si le libellé a déjà été affiché
 
                 for (String line : lines) {
                     String[] parts = line.split(": ", 2); // Divise la ligne en deux parties : le libellé et la valeur
+
                     if (parts.length == 2) {
                         contentStream.setFont(boldFont, fontSize); // Utiliser la police en gras pour les libellés
                         contentStream.showText(parts[0] + ": ");
                         contentStream.setFont(font, fontSize); // Revenir à la police normale pour les valeurs
-                        contentStream.showText(parts[1]);
+
+                        // Obtenir la largeur du libellé
+                        float labelWidth = boldFont.getStringWidth(parts[0]) / 1000 * fontSize;
+                        float labelHeight = font.getFontDescriptor().getFontBoundingBox().getHeight() / 1000 * fontSize;
+
+                        // Diviser la valeur en mots
+                        String[] words = parts[1].split(" ");
+
+                        float startX = margin + labelWidth + 5; // Position horizontale initiale pour la valeur
+                        // Position verticale initiale pour la valeur
+                        float currentPosition = startX;
+
+                        for (String word : words) {
+                            // Obtenir la largeur du mot
+                            float wordWidth = font.getStringWidth(word) / 1000 * fontSize;
+
+                            if (currentPosition + wordWidth > page.getMediaBox().getWidth() - margin) {
+                                // Retour à la ligne si le mot dépasse la largeur de la page
+                                contentStream.newLineAtOffset(0, -leading); // Déplacement vers la ligne suivante
+                                contentStream.showText("      "); // Espacement pour aligner les valeurs avec le libellé
+                                currentPosition = startX;
+                            }
+
+                            if (isLabelDisplayed) {
+                                contentStream.setFont(font, fontSize); // Utiliser la police normale pour les valeurs
+                            } else {
+                                isLabelDisplayed = true;
+                            }
+
+                            contentStream.showText(word + " ");
+                            currentPosition += wordWidth + fontSize;
+                        }
                     } else {
                         contentStream.showText(line);
                     }
+
                     yPosition -= leading; // Ajustement de l'espacement vertical
                     contentStream.newLineAtOffset(0, -leading); // Déplacement vers la ligne suivante
                     yPosition -= leading; // Décale la position verticale pour le contenu suivant
@@ -116,7 +149,6 @@ public class PdfCreator {
 
                 contentStream.endText(); // Fin du flux de texte pour chaque tâche
             }
-
             contentStream.close();
 
             boldInputStream.close(); // N'oubliez pas de fermer le flux boldInputStream
@@ -133,6 +165,6 @@ public class PdfCreator {
 
     private String replaceUnsupportedCharacters(String text) {
         // Replace the unsupported character � with a suitable replacement
-        return text.replace("\uFFFD", "[Unsupported Character]");
+        return text.replace("\uFFFD", "[?]");
     }
 }

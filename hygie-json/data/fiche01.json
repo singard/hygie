@@ -1,23 +1,58 @@
 [
-
   {
-	"testType": "CREATE_HTTPS_SERVER",
-	"description": "ckeck if port https 2020 is free",
-	"args": ["2020"]
+    "testType": "CREATE_HTTPS_SERVER",
+    "description": "ckeck if port https 2020 is free",
+    "args": [
+      "2020"
+    ]
   },
   {
-	"testType": "CREATE_HTTP_SERVER",
-	"description": "ckeck if port http 2000 is free",
-	"args": ["2000"]
+    "testType": "CREATE_HTTP_SERVER",
+    "description": "ckeck if port http 2000 is free",
+    "args": [
+      "2000"
+    ]
   },
   {
-	"testType": "CHECK_FREE_SPACE_DISC",
-	"description": "test espace disque + de 50 go",
-	"args": ["50"]
+    "testType": "CHECK_FREE_SPACE_DISC",
+    "description": "test espace disque + de 50 go",
+    "args": [
+      "50"
+    ]
   },
   {
-	"testType": "CHECK_TOTAL_RAM",
-	"description": "test ram + de 5 go",
-	"args": ["5"]
+    "testType": "CHECK_TOTAL_RAM",
+    "description": "test ram + de 5 go",
+    "args": [
+      "5"
+    ]
+  },
+  {
+    "testType": "CREATE_HTTPS_SERVER",
+    "description": "ckeck if port https 2020 is free",
+    "args": [
+      "2020"
+    ]
+  },
+  {
+    "testType": "CREATE_HTTP_SERVER",
+    "description": "ckeck if port http 2000 is free",
+    "args": [
+      "2000"
+    ]
+  },
+  {
+    "testType": "CHECK_FREE_SPACE_DISC",
+    "description": "test espace disque + de 50 go",
+    "args": [
+      "50"
+    ]
+  },
+  {
+    "testType": "CHECK_TOTAL_RAM",
+    "description": "test ram + de 5 go",
+    "args": [
+      "5"
+    ]
   }
 ]
