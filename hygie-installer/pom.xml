@@ -16,14 +16,32 @@
    
     <properties>
         <javaPathLinux>java/bin/java</javaPathLinux>
-        <javaPathWindows>java\bin\java.exe</javaPathWindows>
+        <javaPathWindows>java\jdk\bin\java.exe</javaPathWindows>
         
         <maven.compiler.source>16</maven.compiler.source>
    		<maven.compiler.target>16</maven.compiler.target>
+   		 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 
     </properties>
 
     <dependencies>
+
+    <!-- Autres dépendances -->
+    
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-compress</artifactId>
+        <version>1.21</version> <!-- Vérifiez la dernière version disponible -->
+    </dependency>
+    
+      <!-- Autres dépendances -->
+<dependency>
+    <groupId>com.github.junrar</groupId>
+    <artifactId>junrar</artifactId>
+    <version>7.4.1</version>
+</dependency>
+    
         <dependency>
             <groupId>com.hygie</groupId>
             <artifactId>hygie-bash</artifactId>
@@ -38,28 +56,58 @@
             <id>windows</id>
 
             <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>windows</id>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                                <phase>package</phase>
-                                <configuration>
-                                    <descriptors>
-                                        <descriptor>src/main/assembly/assembly-archive-windows.xml</descriptor>
-                                    </descriptors>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
+            <plugins>       
+	            <plugin>	
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.6</version>
+					<executions>
+				    	<execution>
+				        	<id>prepare</id>
+				        	<phase>validate</phase>
+				        	<configuration>
+				            	<tasks>
+				                	<echo message="prepare phase" />
+				                	<unzip src="src/main/zip/java1.zip" dest="target/hygie/java"/>
+				                	<unzip src="src/main/zip/java2.zip" dest="target/hygie/java"/>
+				                	<unzip src="src/main/zip/java3.zip" dest="target/hygie/java"/>
+				                	<unzip src="src/main/zip/java4.zip" dest="target/hygie/java"/>
+				            	</tasks>
+				        	</configuration>
+					        <goals>
+					            <goal>run</goal>
+					        </goals>
+					    </execution>
+					</executions>					
+				</plugin>                 
+	            <plugin>
+	               <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.3</version>
+	                <executions>
+	                    <execution>
+	                        <id>windows</id>
+	                        <goals>
+	                            <goal>single</goal>
+	                        </goals>
+	                        <phase>package</phase>
+	                        <configuration>
+	                            <descriptors>
+	                                <descriptor>src/main/assembly/assembly-archive-windows.xml</descriptor>
+	                            </descriptors>
+	                            <archiverConfig>
+							            <compress>false</compress>
+							        </archiverConfig>
+	                        </configuration>
+	                    </execution>
+	                </executions>
+	            </plugin>
+	            
+	          
 
-                </plugins>
-            </build>
-        </profile>
+       		</plugins>
+    	</build>
+	</profile>
         <!-- installer in windows end -->
 
         <!-- installer in linux start -->
@@ -80,7 +128,11 @@
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <descriptors>
                                         <descriptor>src/main/assembly/assembly-archive-linux.xml</descriptor>
+                                        
                                     </descriptors>
+                                    <archiverConfig>
+							            <compress>false</compress>
+							        </archiverConfig>
                                 </configuration>
                             </execution>
                         </executions>
