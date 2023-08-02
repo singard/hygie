@@ -5,6 +5,7 @@ import com.hygie.hygietask.tasks.CheckTotalRam;
 import com.hygie.hygietask.tasks.CreateHTTPSServer;
 import com.hygie.hygietask.tasks.CreateHTTPServer;
 import com.hygie.hygietask.tasks.CreateTCPServer;
+import com.hygie.hygietask.tasks.HttpRequest;
 
 import lombok.AllArgsConstructor;
 
@@ -15,7 +16,8 @@ public enum TaskType {
 	CHECK_TOTAL_RAM(CheckTotalRam.class), 
 	CREATE_HTTP_SERVER(CreateHTTPServer.class),
 	CREATE_HTTPS_SERVER(CreateHTTPSServer.class),
-	CREATE_TCP_SERVER(CreateTCPServer.class);
+	CREATE_TCP_SERVER(CreateTCPServer.class),
+	HTTP_REQUEST(HttpRequest.class);
 	
 	private final Class<? extends TaskClass> classe;
 
