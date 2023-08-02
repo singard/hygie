@@ -20,9 +20,19 @@
 	"args": ["2020"]
   },
   {
+	"testType": "HTTP_REQUEST",
+	"description": "ckeck if the port 2000 is connected",
+	"args": ["localhost","2000"]
+  },
+  {
 	"testType": "CREATE_HTTP_SERVER",
 	"description": "ckeck if port http 2000 is free",
 	"args": ["2000"]
+  },
+  {
+	"testType": "HTTP_REQUEST",
+	"description": "ckeck if the port 2000 is connected",
+	"args": ["localhost","2000"]
   },
   {
 	"testType": "CREATE_HTTP_SERVER",
