@@ -1,0 +1,56 @@
+[
+	{
+		"testType": "CREATE_HTTPS_SERVER",
+		"description": "ckeck if port https 2020 is free",
+		"args": [
+			"2020"
+		]
+	},
+	{
+		"testType": "HTTP_REQUEST",
+		"description": "ckeck if the port 2020 is connected in http (for server https)",
+		"args": [
+			"http",
+			"localhost",
+			"2020","2000"
+			
+		]
+	},
+	{
+		"testType": "HTTP_REQUEST",
+		"description": "ckeck if the port 2020 is connected in https (for server https)",
+		"args": [
+			"https",
+			"localhost",
+			"2020","2000"
+			
+		]
+	},
+	{
+		"testType": "CREATE_HTTP_SERVER",
+		"description": "ckeck if port http 2000 is free",
+		"args": [
+			"2000"
+		]
+	},
+	{
+		"testType": "HTTP_REQUEST",
+		"description": "ckeck if the port 2000 is connected in http (for server http)",
+		"args": [
+			"http",
+			"localhost",
+			"2000","2000"
+			
+		]
+	},
+	{
+		"testType": "HTTP_REQUEST",
+		"description": "ckeck if the port 2000 is connected in https (for server http)",
+		"args": [
+			"https",
+			"localhost",
+			"2000","2000"
+			
+		]
+	},
+]

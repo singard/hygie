@@ -22,7 +22,7 @@
   {
 	"testType": "HTTP_REQUEST",
 	"description": "ckeck if the port 2000 is connected",
-	"args": ["localhost","2000"]
+	"args": ["http","localhost","2000","2000"]
   },
   {
 	"testType": "CREATE_HTTP_SERVER",
@@ -32,7 +32,7 @@
   {
 	"testType": "HTTP_REQUEST",
 	"description": "ckeck if the port 2000 is connected",
-	"args": ["localhost","2000"]
+	"args": ["http","localhost","2000","2000"]
   },
   {
 	"testType": "CREATE_HTTP_SERVER",
