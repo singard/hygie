@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.hygie</groupId>
     <artifactId>hygie</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
   </parent>
   
   <artifactId>hygie-installer</artifactId>
@@ -45,7 +45,7 @@
         <dependency>
             <groupId>com.hygie</groupId>
             <artifactId>hygie-bash</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>1.1</version>
         </dependency>
 
     </dependencies>
@@ -114,32 +114,54 @@
         <profile>
             <id>linux</id>
             <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>linux</id>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                                <phase>package</phase>
-                                <configuration>
-                                    <appendAssemblyId>false</appendAssemblyId>
-                                    <descriptors>
-                                        <descriptor>src/main/assembly/assembly-archive-linux.xml</descriptor>
-                                        
-                                    </descriptors>
-                                    <archiverConfig>
-							            <compress>false</compress>
-							        </archiverConfig>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
+            <plugins>       
+	            <plugin>	
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.6</version>
+					<executions>
+				    	<execution>
+				        	<id>prepare</id>
+				        	<phase>validate</phase>
+				        	<configuration>
+				            	<tasks>
+				                	<echo message="prepare phase" />
+				                	<unzip src="src/main/zip/java1.zip" dest="target/hygie/java"/>
+				                	<unzip src="src/main/zip/java2.zip" dest="target/hygie/java"/>
+				                	<unzip src="src/main/zip/java3.zip" dest="target/hygie/java"/>
+				                	<unzip src="src/main/zip/java4.zip" dest="target/hygie/java"/>
+				            	</tasks>
+				        	</configuration>
+					        <goals>
+					            <goal>run</goal>
+					        </goals>
+					    </execution>
+					</executions>					
+				</plugin>                 
+	            <plugin>
+	               <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+	                <executions>
+	                    <execution>
+	                        <id>linux</id>
+	                        <goals>
+	                            <goal>single</goal>
+	                        </goals>
+	                        <phase>package</phase>
+	                        <configuration>
+	                            <descriptors>
+	                                <descriptor>src/main/assembly/assembly-archive-linux.xml</descriptor>
+	                            </descriptors>
+	                        </configuration>
+	                    </execution>
+	                </executions>
+	            </plugin>
+	            
+	          
 
-                </plugins>
-            </build>
+       		</plugins>
+    	</build>
         </profile>
         <!-- installer in linux end -->
 
