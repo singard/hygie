@@ -1,7 +1,5 @@
 package com.hygie.hygietask.tasks;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.InetAddress;
 import java.net.URL;
@@ -24,31 +22,27 @@ public class HttpRequest implements TaskClass{
 	public ResultTask executer() {
 		ResultTask resultTask = new ResultTask();
 		try {
+			String typeRequest = args[0];
+			String host= args[1];
+			int port =  Integer.parseInt(args[2]);
+			int timeout = Integer.parseInt(args[3]);
 
-			int port =  Integer.parseInt(args[1]);
-			String host= args[0];
-
-			URL url = new URL("http://" + host + ":" + port + "/ping");
+			URL url = new URL(typeRequest+"://" + host + ":" + port + "/ping");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
+			connection.setReadTimeout(timeout);
+			connection.setConnectTimeout(timeout);
 
 			int responseCode = connection.getResponseCode();
 			if (responseCode == HttpURLConnection.HTTP_OK) {
-				BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-				String inputLine;
-				StringBuffer response = new StringBuffer();
 
-				while ((inputLine = in.readLine()) != null) {
-					response.append(inputLine);
-				}
-				in.close();
 
-				log.info("Ping response from " + host + ":" + port + ": " + response.toString());
+				
 				resultTask.setSuccessfulTest(true);
 			} else {
 				resultTask.setSuccessfulTest(false);
 				resultTask.setResult("Ping request failed. Response code: " + responseCode);
-				log.info("Ping request failed. Response code: " + responseCode);
+				log.error("Ping request failed. Response code: " + responseCode);
 				return resultTask;
 			}
 		} catch (Exception e) {
@@ -62,25 +56,34 @@ public class HttpRequest implements TaskClass{
 
 	@Override
 	public void verifyArgs() {
-		if (args.length != 2) {
-			throw new IllegalArgumentException("Le tableau doit contenir exactement deux éléments.");
+		if (args.length != 4) {
+			throw new IllegalArgumentException("Le tableau doit contenir exactement trois éléments.");
 		}
 
 		try {
+			if (args[0].equals("http")||args[0].equals("https")) {
+
+			} else {
+				throw new IllegalArgumentException("Le premier élément du tableau doit valoir http ou https.");
+			}
+		} catch (Exception e) {
+			log.error("Error: ", e);
+		}
+		try {
 			// Vérification que le premier argument est une adresse IP valide
-			InetAddress.getByName(args[0]);
+			InetAddress.getByName(args[1]);
 		} catch (UnknownHostException e) {
-			throw new IllegalArgumentException("Le premier élément du tableau doit être une adresse IP valide.");
+			throw new IllegalArgumentException("Le second élément du tableau doit être une adresse IP valide.");
 		}
 
 		try {
 			// Vérification que le deuxième argument est un entier valide pour le port
-			int port = Integer.parseInt(args[1]);
+			int port = Integer.parseInt(args[2]);
 			if (port <= 0 || port > 65535) {
-				throw new IllegalArgumentException("Le deuxième élément du tableau doit être un entier valide pour le port (entre 1 et 65535).");
+				throw new IllegalArgumentException("Le troisième élément du tableau doit être un entier valide pour le port (entre 1 et 65535).");
 			}
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("Le deuxième élément du tableau doit être un entier valide pour le port.");
+			throw new IllegalArgumentException("Le troisième élément du tableau doit être un entier valide pour le port.");
 		}
 	}
 
